@@ -1,5 +1,17 @@
 [
-  { "name": "Extra-Nuclear Structure of Atom", "subtopics": [] },
+  { "name": "Extra-Nuclear Structure of Atom", "subtopics": [
+      { "id": "chem_atom_1", "name": "Quantum numbers and their significance", "url": "" },
+      { "id": "chem_atom_2", "name": "Schrödinger’s wave equation", "url": "" },
+      { "id": "chem_atom_3", "name": "Significance of ψ and ψ²", "url": "" },
+      { "id": "chem_atom_4", "name": "Radial and angular wave functions for hydrogen atom", "url": "" },
+      { "id": "chem_atom_5", "name": "Radial and angular distribution curves", "url": "" },
+      { "id": "chem_atom_6", "name": "Shapes of s, p, d, and f orbitals", "url": "" },
+      { "id": "chem_atom_7", "name": "Pauli’s exclusion principle", "url": "" },
+      { "id": "chem_atom_8", "name": "Hund’s rules and multiplicity", "url": "" },
+      { "id": "chem_atom_9", "name": "Exchange energy", "url": "" },
+      { "id": "chem_atom_10", "name": "Aufbau principle and its limitations", "url": "" },
+      { "id": "chem_atom_11", "name": "Ground state term symbols of atoms and ions (up to Z = 30)", "url": "" }
+    ] },
   { "name": "Acid–Base Reactions", "subtopics": [] },
   { "name": "Redox Reactions and Electroanalytical Methods", "subtopics": [] },
   { "name": "Solubility and Solubility Effects", "subtopics": [] },
