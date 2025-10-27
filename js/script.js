@@ -36,10 +36,10 @@ function populateViewer() {
   if (!params.subject || !params.topic) return;
 
   // Back button path
-  backBtn.href = `subjects/${params.subject}.html`;
+  backBtn.href = `/my-hubsubjects/${params.subject}.html`;
 
   // Load the JSON for this subject
-  fetch(`../data/${params.subject}.json`)
+  fetch(`/my-hub/data/${params.subject}.json`)
     .then(res => res.json())
     .then(data => {
       let foundSubtopic = null;
