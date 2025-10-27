@@ -222,3 +222,11 @@ footer {
   color: #fff;
   text-decoration: underline;
 }
+.subject-card:hover {
+  transform: scale(1.03);
+}
+.subject-card img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
