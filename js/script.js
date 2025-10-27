@@ -118,41 +118,52 @@ function attachSubtopicListeners(subject) {
 // -------------------------------
 // Populate viewer.html
 // -------------------------------
-function populateViewer(topicId) {
-  fetch("../data/chemistry.json")
-    .then(response => response.json())
+function populateViewer() {
+  const { subject, topic } = getQueryParams();
+  const header = document.querySelector("header p");
+  const backBtn = document.getElementById("back-btn");
+  const viewerContent = document.getElementById("viewer-content");
+
+  if (!subject || !topic) {
+    viewerContent.innerHTML = "<p>Invalid topic link.</p>";
+    return;
+  }
+
+  const dataPath = resolveDataPath(subject);
+  backBtn.href = `/my-hub/subjects/${subject}.html`;
+
+  fetch(dataPath)
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
     .then(data => {
       let found = null;
 
-      // search through all topics and subtopics
-      data.forEach(topic => {
-        topic.subtopics.forEach(sub => {
-          if (sub.id === topicId || sub["data-topic"] === topicId) {
-            found = sub;
-          }
+      data.forEach(t => {
+        t.subtopics.forEach(s => {
+          if (s.id === topic || s["data-topic"] === topic) found = s;
         });
       });
 
       if (!found) {
-        document.getElementById("viewer-content").innerHTML = "<p>Topic not found.</p>";
+        viewerContent.innerHTML = "<p>Topic not found.</p>";
         return;
       }
 
-      // prepare embed URL
+      // Prepare embed URL
       let embedUrl = found.url || "";
-
-      if (embedUrl) {
-        if (embedUrl.includes("watch?v=")) {
-          embedUrl = embedUrl.replace("watch?v=", "embed/");
-        } else if (embedUrl.includes("youtu.be/")) {
-          embedUrl = embedUrl.replace("youtu.be/", "www.youtube.com/embed/");
-        } else if (embedUrl.includes("shorts/")) {
-          embedUrl = embedUrl.replace("shorts/", "embed/");
-        }
+      if (embedUrl.includes("watch?v=")) {
+        embedUrl = embedUrl.replace("watch?v=", "embed/");
+      } else if (embedUrl.includes("youtu.be/")) {
+        embedUrl = embedUrl.replace("youtu.be/", "www.youtube.com/embed/");
+      } else if (embedUrl.includes("shorts/")) {
+        embedUrl = embedUrl.replace("shorts/", "embed/");
       }
 
-      // inject content
-      document.getElementById("viewer-content").innerHTML = `
+      // Inject content
+      header.textContent = `Topic: ${found.name}`;
+      viewerContent.innerHTML = `
         <h2 class="text-2xl font-bold mb-4">${found.name}</h2>
         ${embedUrl ? `
           <iframe width="100%" height="480"
@@ -165,8 +176,8 @@ function populateViewer(topicId) {
         ${found.description ? `<p class="mt-4 text-gray-700">${found.description}</p>` : ""}
       `;
     })
-    .catch(error => {
-      console.error("Error loading topic:", error);
-      document.getElementById("viewer-content").innerHTML = "<p>Error loading topic.</p>";
+    .catch(err => {
+      console.error("❌ Viewer load failed:", err);
+      viewerContent.innerHTML = "<p>Error loading topic.</p>";
     });
 }
