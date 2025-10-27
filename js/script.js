@@ -14,36 +14,49 @@ function getQueryParams() {
 }
 
 function markCompleted(topicId) {
-  console.log(`Topic "${topicId}" marked completed (placeholder)`);
+  console.log(`✅ Topic "${topicId}" marked completed (placeholder)`);
 }
 
 // Open viewer.html with correct params
 function openViewer(topicId, subject) {
-  window.location.href = `/my-hub/viewer.html?subject=${subject}&topic=${topicId}`;
+  // Handle both local and GitHub Pages paths
+  const basePath = window.location.origin.includes("github.io")
+    ? "/my-hub"
+    : "";
+  window.location.href = `${basePath}/viewer.html?subject=${subject}&topic=${topicId}`;
 }
 
 // -------------------------------
-// Build Topics Dynamically
+// Detect correct JSON path
+// -------------------------------
+function resolveDataPath(subject) {
+  const basePath = window.location.origin.includes("github.io")
+    ? "/my-hub"
+    : ".";
+  return `${basePath}/data/${subject}.json`;
+}
+
+// -------------------------------
+// DOM Ready
 // -------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
 
-  // If we’re on a subject page (like cybersecurity.html)
+  // If on subject page (like cybersecurity.html)
   if (path.includes("subjects/")) {
     const subject = path.split("/").pop().replace(".html", "");
     const container = document.querySelector(".topics-container");
 
-   fetch('./data/cybersecurity.json')
-  .then(response => {
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
-  })
-  .then(data => console.log('✅ JSON loaded:', data))
-  .catch(err => console.error('❌ JSON load failed:', err));
-
+    fetch(resolveDataPath(subject))
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(data => buildTopics(data, subject, container))
+      .catch(err => console.error("❌ JSON load failed:", err));
   }
 
-  // If we’re on the viewer page
+  // If on viewer page
   if (path.endsWith("viewer.html")) {
     populateViewer();
   }
@@ -54,12 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // -------------------------------
 function buildTopics(data, subject, container) {
   data.forEach(topic => {
+    // Main topic element
     const topicDiv = document.createElement("div");
     topicDiv.classList.add("topic");
     topicDiv.dataset.topic = topic.name;
     topicDiv.textContent = topic.name;
     container.appendChild(topicDiv);
 
+    // Subtopics list
     const subList = document.createElement("ol");
     subList.classList.add("subtopics-container");
 
@@ -116,19 +131,24 @@ function populateViewer() {
   const viewerContent = document.getElementById("viewer-content");
 
   if (!subject || !topic) {
-    viewerContent.innerHTML = "<p>Invalid topic link.</p>";
+    viewerContent.innerHTML = "<p>⚠️ Invalid topic link.</p>";
     return;
   }
 
-  // Back button
-  backBtn.href = `/my-hub/subjects/${subject}.html`;
+  // Handle path for back button and JSON
+  const basePath = window.location.origin.includes("github.io")
+    ? "/my-hub"
+    : ".";
+  backBtn.href = `${basePath}/subjects/${subject}.html`;
 
-  // Load JSON
-  fetch(`/my-hub/data/${subject}.json`)
-    .then(res => res.json())
+  // Load JSON data
+  fetch(resolveDataPath(subject))
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
     .then(data => {
       let found = null;
-
       data.forEach(t => {
         t.subtopics.forEach(s => {
           if (s.id === topic) found = s;
@@ -142,7 +162,7 @@ function populateViewer() {
 
       header.textContent = `Topic: ${found.name}`;
 
-      // Show content
+      // Show video or article
       if (found.url && found.url.includes("youtube.com")) {
         viewerContent.innerHTML = `
           <iframe width="100%" height="500"
