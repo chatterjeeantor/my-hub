@@ -125,7 +125,7 @@ function attachSubtopicListeners(subject) {
 // Populate viewer.html
 // -------------------------------
 function populateViewer(topicId) {
-  fetch("../js/chemistry.json")
+  fetch("../data/chemistry.json")
     .then(response => response.json())
     .then(data => {
       let found = null;
