@@ -23,17 +23,11 @@ function openViewer(topicId, subject) {
 
 // Smart path resolver (works locally + on GitHub Pages)
 function resolveDataPath(subject) {
-  const origin = window.location.origin;
-  const isGitHub = origin.includes("github.io");
-
-  if (isGitHub) {
-    // GitHub Pages: include repository name
-    return `${origin}/my-hub/data/${subject}.json`;
-  } else {
-    // Local dev
-    return `../data/${subject}.json`;
-  }
+  const isGitHub = window.location.origin.includes("github.io");
+  const basePath = isGitHub ? "/my-hub" : "..";
+  return `${basePath}/data/${subject}.json`;
 }
+
 
 // -------------------------------
 // DOM load handler
