@@ -1,21 +1,18 @@
 [
-  { "name": "Extra-Nuclear Structure of Atom", "subtopics": [] },
-  { "name": "Acid–Base Reactions", "subtopics": [] },
-  { "name": "Redox Reactions and Electroanalytical Methods", "subtopics": [] },
-  { "name": "Solubility and Solubility Effects", "subtopics": [] },
-  { "name": "Basics of Organic Chemistry: Bonding and Physical Properties", "subtopics": [] },
-  { "name": "General Treatment of Reaction Mechanism I", "subtopics": [] },
-  { "name": "Kinetic Theory and Gaseous State", "subtopics": [] },
-  { "name": "Transport Processes", "subtopics": [] },
-  { "name": "Chemical Kinetics", "subtopics": [] },
-  { "name": "Stereochemistry I", "subtopics": [] },
-  { "name": "General Treatment of Reaction Mechanism II", "subtopics": [] },
-  { "name": "Acid–Base Titrations", "subtopics": [] },
-  { "name": "Oxidation–Reduction Titrations", "subtopics": [] },
-  { "name": "Separation and Purification of Binary Solid Mixtures", "subtopics": [] },
-  { "name": "Suggested Mixture Types (Any Three)", "subtopics": [] },
-  { "name": "Chemical Kinetics Experiments", "subtopics": [] },
-  { "name": "Viscosity Experiments", "subtopics": [] },
-  { "name": "Solubility Experiment", "subtopics": [] },
-  { "name": "Determination of Boiling Point of Organic Liquids", "subtopics": [] }
+  {
+    "name": "Atomic Structure",
+    "subtopics": [
+      { "data-topic": "chem_atom_1", "name": "Atoms & Subatomic Particles" },
+      { "id": "chem_atom_2", "name": "Electron Configuration" },
+      { "id": "chem_atom_3", "name": "Quantum Numbers" }
+    ]
+  },
+  {
+    "name": "Chemical Bonding",
+    "subtopics": [
+      { "id": "chem_bond_1", "name": "Ionic Bonds" },
+      { "id": "chem_bond_2", "name": "Covalent Bonds" },
+      { "id": "chem_bond_3", "name": "Metallic Bonds" }
+    ]
+  }
 ]
