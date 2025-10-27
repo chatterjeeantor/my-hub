@@ -1,0 +1,224 @@
+/* ===============================
+  Variables for Dark Theme
+   =============================== */
+:root {
+  --bg-color: #121212;        /* Page background */
+  --card-bg: #1e1e1e;         /* Card background */
+  --text-color: #e0e0e0;      /* Main text */
+  --subtext-color: #b0b0b0;   /* Secondary text */
+  --primary-color: #4f46e5;   /* Blue action buttons */
+  --primary-hover: #3730a3;   /* Hover effect for buttons */
+  --secondary-color: #22c55e; /* Green action buttons */
+  --secondary-hover: #16a34a; /* Hover effect for buttons */
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ===============================
+  Global Styles
+   =============================== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background-color: #1f2937; /* Slightly lighter than page bg */
+  color: var(--text-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin-top: 0.25rem;
+  color: var(--subtext-color);
+  font-size: 0.875rem;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+/* Subject grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* default: 1 column */
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+
+/* Cards */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Card image */
+.card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Card title */
+.card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Card description */
+.card p {
+  color: var(--subtext-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* Footer */
+footer {
+  background-color: #1f2937;
+  color: var(--subtext-color);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+.topics-container {
+  height: 100vh;            /* full viewport height */
+  overflow-y: auto;          /* scrollable */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;             /* spacing from edges */
+  box-sizing: border-box;
+}
+
+.topic {
+  padding: 1rem 1.5rem;  
+  position: relative;                    /* spacing around text */
+  margin-bottom: 2rem;                       /* spacing between topics */
+  background-color: #1a1a1a;                 /* dark background for each topic */
+  color: #e0e0e0;                            /* text color */
+  border-radius: 0.3rem;                     /* subtle rounded edges */
+  font-size: clamp(1rem, 2.5vw, 1.5rem);    /* responsive font size */
+  cursor: pointer;                           /* indicate clickable */
+  transition: background-color 0.2s, color 0.2s;
+  text-align: center;
+}
+.topic:hover {
+  background-color: #333;  /* slightly lighter on hover */
+}
+
+.active-topic {
+  background-color: #555;  /* highlight selected topic */
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Optional: hide scrollbar for aesthetics (Webkit) */
+.topics-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.topics-container::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 3px;
+}
+
+.topics-container::-webkit-scrollbar-track {
+  background-color: #1a1a1a;
+}
+.subtopics-container {
+  display: none;
+  padding: 1rem 1rem 1rem 2rem;  /* padding inside the block */
+  margin: 0 0 3rem 0;
+  counter-reset: subtopic-counter;
+  list-style: none;               /* remove default numbers */
+  background-color: #2a2a2a;      /* slightly lighter than topic background */
+  border-radius: 0.5rem;          /* optional rounded corners */
+}
+
+.subtopics-container.visible {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0 1rem;
+}
+
+.subtopics-container li {
+  counter-increment: subtopic-counter;
+  position: relative;
+  margin: 0.3rem 0;
+  padding-left: 1.5rem;           /* space for number */
+  cursor: pointer;
+  color: #e0e0e0;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.subtopics-container li::before {
+  content: counter(subtopic-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffcc00;                /* number color */
+  font-weight: bold;
+}
+
+.subtopics-container li:hover {
+  color: #fff;
+  text-decoration: underline;
+}

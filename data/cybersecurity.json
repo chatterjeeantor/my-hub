@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Networking",
+    "subtopics": [
+      { "id": "net_1", "name": "OSI Model", "url": "https://www.youtube.com/watch?v=xyz" },
+      { "id": "net_2", "name": "IP Addressing", "url": "https://www.youtube.com/watch?v=abc" },
+      { "id": "net_3", "name": "TCP/UDP", "url": "https://www.example.com/article/tcp-udp" }
+    ]
+  },
+  {
+    "name": "Linux",
+    "subtopics": [
+      { "id": "linux_1", "name": "File Permissions", "url": "https://www.youtube.com/watch?v=def" },
+      { "id": "linux_2", "name": "Process Management", "url": "https://www.example.com/article/processes" }
+    ]
+  }
+]

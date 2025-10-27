@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Learning Hub</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Optional: Tailwind CDN for quick styling -->
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="p-4 text-center">
+    <h1 class="text-3xl font-bold">My Learning Hub</h1>
+    <p class="text-sm mt-1">Your personal study dashboard</p>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-1 p-6">
+    <!-- Subject grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+      <!-- Subject Card: Cybersecurity -->
+      <div class="card">
+        <!-- Placeholder image -->
+        <img src="https://via.placeholder.com/150" alt="Cybersecurity" class="mb-4 rounded">
+        <!-- Subject name -->
+        <h2 class="text-xl font-semibold mb-2">Cybersecurity</h2>
+        <!-- Placeholder description -->
+        <p class="text-gray-600 text-center mb-4">Placeholder description about Cybersecurity courses.</p>
+        <!-- Placeholder link -->
+        <div class="flex gap-2 flex-wrap">
+          <button class="btn-primary" onclick="window.location.href='subjects/cybersecurity.html'">
+              Cybersecurity
+          </button>
+          <button class="btn-secondary" onclick="window.location.href='subjects/cybersecurity-syllabus.html'">
+            Syllabus
+          </button>
+  </div>
+      </div>
+
+      <!-- Subject Card: Chemistry -->
+      <div class="card">
+        <!-- Placeholder image -->
+        <img src="https://via.placeholder.com/150" alt="Chemistry" class="mb-4 rounded">
+        <!-- Subject name -->
+        <h2 class="text-xl font-semibold mb-2">Chemistry</h2>
+        <!-- Placeholder description -->
+        <p class="text-gray-600 text-center mb-4">Placeholder description about Chemistry courses.</p>
+        <!-- Placeholder link -->
+        <div class="flex gap-2 flex-wrap">
+          <button class="btn-primary" onclick="window.location.href='subjects/chemistry.html'">
+            Chemistry
+          </button>
+          <button class="btn-secondary" onclick="window.location.href='subjects/chemistry-syllabus.html'">
+            Syllabus
+          </button>
+  </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-gray-700 p-4 text-center text-sm">
+    &copy; 2025 My Learning Hub. All rights reserved.
+  </footer>
+
+</body>
+</html>
