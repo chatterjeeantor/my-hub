@@ -13,7 +13,7 @@ function markCompleted(topicId) {
 
 function openViewer(topicId, subject) {
   console.log(`Opening viewer for topic "${topicId}" in subject "${subject}"`);
-  window.location.href = `../viewer.html?subject=${subject}&topic=${topicId}`;
+  window.location.href = `/my-hub/viewer.html?subject=${subject}&topic=${topicId}`;
 }
 
 function getQueryParams() {
@@ -102,7 +102,7 @@ function loadSubjectData() {
 
   if (!subject) return;
 
-  fetch(`../data/${subject}.json`)
+  fetch(`/my-hub/data/${subject}.json`)
     .then(res => res.json())
     .then(data => {
       buildTopicStructure(container, data);
