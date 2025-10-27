@@ -3,7 +3,7 @@
 // ===============================
 
 // -------------------------------
-// Utility Functions
+// Utility functions
 // -------------------------------
 function getQueryParams() {
   const params = new URLSearchParams(window.location.search);
@@ -14,49 +14,45 @@ function getQueryParams() {
 }
 
 function markCompleted(topicId) {
-  console.log(`✅ Topic "${topicId}" marked completed (placeholder)`);
+  console.log(`Topic "${topicId}" marked completed (placeholder)`);
 }
 
-// Open viewer.html with correct params
 function openViewer(topicId, subject) {
-  // Handle both local and GitHub Pages paths
-  const basePath = window.location.origin.includes("github.io")
-    ? "/my-hub"
-    : "";
-  window.location.href = `${basePath}/viewer.html?subject=${subject}&topic=${topicId}`;
+  window.location.href = `/my-hub/viewer.html?subject=${subject}&topic=${topicId}`;
 }
 
-// -------------------------------
-// Detect correct JSON path
-// -------------------------------
+// Smart path resolver (works locally + on GitHub Pages)
 function resolveDataPath(subject) {
-  const basePath = window.location.origin.includes("github.io")
-    ? "/my-hub"
-    : ".";
+  const isGitHub = window.location.origin.includes("github.io");
+  const basePath = isGitHub ? "/my-hub" : "..";
   return `${basePath}/data/${subject}.json`;
 }
 
 // -------------------------------
-// DOM Ready
+// DOM load handler
 // -------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
 
-  // If on subject page (like cybersecurity.html)
+  // If we’re on a subject page (like subjects/cybersecurity.html)
   if (path.includes("subjects/")) {
     const subject = path.split("/").pop().replace(".html", "");
     const container = document.querySelector(".topics-container");
+    const dataPath = resolveDataPath(subject);
 
-    fetch(resolveDataPath(subject))
+    fetch(dataPath)
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
       })
-      .then(data => buildTopics(data, subject, container))
+      .then(data => {
+        console.log("✅ JSON loaded:", data);
+        buildTopics(data, subject, container);
+      })
       .catch(err => console.error("❌ JSON load failed:", err));
   }
 
-  // If on viewer page
+  // If we’re on the viewer page
   if (path.endsWith("viewer.html")) {
     populateViewer();
   }
@@ -67,14 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 // -------------------------------
 function buildTopics(data, subject, container) {
   data.forEach(topic => {
-    // Main topic element
     const topicDiv = document.createElement("div");
     topicDiv.classList.add("topic");
     topicDiv.dataset.topic = topic.name;
     topicDiv.textContent = topic.name;
     container.appendChild(topicDiv);
 
-    // Subtopics list
     const subList = document.createElement("ol");
     subList.classList.add("subtopics-container");
 
@@ -97,8 +91,7 @@ function buildTopics(data, subject, container) {
 // Toggle subtopics visibility
 // -------------------------------
 function initMainTopicLadder() {
-  const mainTopics = document.querySelectorAll(".topic");
-  mainTopics.forEach(topic => {
+  document.querySelectorAll(".topic").forEach(topic => {
     topic.addEventListener("click", () => {
       const subtopics = topic.nextElementSibling;
       if (subtopics && subtopics.classList.contains("subtopics-container")) {
@@ -131,24 +124,18 @@ function populateViewer() {
   const viewerContent = document.getElementById("viewer-content");
 
   if (!subject || !topic) {
-    viewerContent.innerHTML = "<p>⚠️ Invalid topic link.</p>";
+    viewerContent.innerHTML = "<p>Invalid topic link.</p>";
     return;
   }
 
-  // Handle path for back button and JSON
-  const basePath = window.location.origin.includes("github.io")
-    ? "/my-hub"
-    : ".";
-  backBtn.href = `${basePath}/subjects/${subject}.html`;
+  const dataPath = resolveDataPath(subject);
+  backBtn.href = `/my-hub/subjects/${subject}.html`;
 
-  // Load JSON data
-  fetch(resolveDataPath(subject))
-    .then(res => {
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return res.json();
-    })
+  fetch(dataPath)
+    .then(res => res.json())
     .then(data => {
       let found = null;
+
       data.forEach(t => {
         t.subtopics.forEach(s => {
           if (s.id === topic) found = s;
@@ -162,24 +149,22 @@ function populateViewer() {
 
       header.textContent = `Topic: ${found.name}`;
 
-      // Show video or article
+      // Show content
       if (found.url && found.url.includes("youtube.com")) {
         viewerContent.innerHTML = `
           <iframe width="100%" height="500"
             src="${found.url.replace("watch?v=", "embed/")}"
-            frameborder="0" allowfullscreen>
-          </iframe>`;
+            frameborder="0" allowfullscreen></iframe>`;
       } else if (found.url) {
         viewerContent.innerHTML = `
           <iframe width="100%" height="500"
-            src="${found.url}" frameborder="0">
-          </iframe>`;
+            src="${found.url}" frameborder="0"></iframe>`;
       } else {
         viewerContent.innerHTML = "<p>No content available.</p>";
       }
     })
     .catch(err => {
-      console.error("Error loading viewer:", err);
+      console.error("❌ Viewer load failed:", err);
       viewerContent.innerHTML = "<p>Failed to load content.</p>";
     });
 }
