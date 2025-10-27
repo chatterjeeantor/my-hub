@@ -33,10 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const subject = path.split("/").pop().replace(".html", "");
     const container = document.querySelector(".topics-container");
 
-    fetch(`/my-hub/data/${subject}.json`)
-      .then(res => res.json())
-      .then(data => buildTopics(data, subject, container))
-      .catch(err => console.error("Failed to load topics:", err));
+   fetch('./data/cybersecurity.json')
+  .then(response => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  })
+  .then(data => console.log('✅ JSON loaded:', data))
+  .catch(err => console.error('❌ JSON load failed:', err));
+
   }
 
   // If we’re on the viewer page
