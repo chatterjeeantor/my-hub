@@ -1,6 +1,13 @@
 [
   { "name": "Extra-Nuclear Structure of Atom", "subtopics": [] },
-  { "name": "Electronic Structure of Multielectronic Atoms", "subtopics": [] },
+  { "name": "Electronic Structure of Multielectronic Atoms", "subtopics": [
+  {"id": "vid1", "name": "Wave–Particle Duality and de Broglie Hypothesis & Heisenberg’s Uncertainty Principle", "url": "https://www.youtube.com/watch?v=uK2eFv7ne_Q"},
+  {"id": "vid2", "name": "Introduction to Schrödinger Equation", "url": "https://youtu.be/7q32Wnm4dEw?si=u42O1rA5tIzJhaOO"},
+  {"id": "vid3", "name": "Significance of ψ and ψ² & Radial and Angular Distribution Functions", "url": "https://youtu.be/G0aGlipKacI?si=XY2i-83ZL_2Dbgj3"},
+  {"id": "vid4", "name": "Hydrogen and hydrogen like systems", "url": "https://youtu.be/8kM9quINTHI?si=sB22kKd5osipO64v"},
+  {"id": "vid5", "name": "Atomic Orbitals: Concept and Quantum Numbers (n, l, m, s)", "url": "https://youtu.be/DvRzdCnsiYw?si=ob6GAk1Y_wHYL8y_"},
+  {"id": "vid6", "name": "Shapes of s, p, and d Orbitals", "url": "https://youtu.be/0_UyQAtXEL8?si=ukcy9p3S0ByqVdz2"}
+  ] },
   { "name": "Effective Nuclear Charge and Shielding", "subtopics": [] },
   { "name": "Periodicity and Periodic Properties", "subtopics": [] },
   { "name": "Basics of Organic Chemistry: Bonding and Physical Properties", "subtopics": [] },
