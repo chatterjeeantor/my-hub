@@ -1,34 +1,129 @@
 [
-  { "name": "Extra-Nuclear Structure of Atom", "subtopics": [] },
-  { "name": "Electronic Structure of Multielectronic Atoms", "subtopics": [
-  {"id": "vid1", "name": "Wave–Particle Duality and de Broglie Hypothesis & Heisenberg’s Uncertainty Principle", "url": "https://www.youtube.com/watch?v=uK2eFv7ne_Q"},
-  {"id": "vid2", "name": "Introduction to Schrödinger Equation", "url": "https://youtu.be/7q32Wnm4dEw?si=u42O1rA5tIzJhaOO"},
-  {"id": "vid3", "name": "Significance of ψ and ψ² & Radial and Angular Distribution Functions", "url": "https://youtu.be/G0aGlipKacI?si=XY2i-83ZL_2Dbgj3"},
-  {"id": "vid4", "name": "Hydrogen and hydrogen like systems", "url": "https://youtu.be/8kM9quINTHI?si=sB22kKd5osipO64v"},
-  {"id": "vid5", "name": "Atomic Orbitals: Concept and Quantum Numbers (n, l, m, s)", "url": "https://youtu.be/DvRzdCnsiYw?si=ob6GAk1Y_wHYL8y_"},
-  {"id": "vid6", "name": "Shapes of s, p, and d Orbitals", "url": "https://youtu.be/0_UyQAtXEL8?si=ukcy9p3S0ByqVdz2"}
-  ] },
-  { "name": "Effective Nuclear Charge and Shielding", "subtopics": [
-  {"id": "vid7", "name": "Orbital-filling & rules", "url": "https://youtu.be/qVOkLkiEOVE?si=JVE6_B2_UVDACAJD"},
-  {"id": "vid8", "name": "Exchange Energy and Stability", "url": "https://youtu.be/DknGNJErxLI?si=FORG2-hEYQga6a6C"},
-  {"id": "vid9", "name": "Exceptional Configurations (Cr, Cu, etc.)", "url": "https://youtu.be/sRCG8YAJytw?si=22kkgc0bLbR9ypBE"}
-]
-},
-  { "name": "Periodicity and Periodic Properties", "subtopics": [] },
-  { "name": "Basics of Organic Chemistry: Bonding and Physical Properties", "subtopics": [] },
-  { "name": "Molecular Orbital Theory and Aromaticity", "subtopics": [] },
-  { "name": "Physical Properties of Organic Compounds", "subtopics": [] },
-  { "name": "Stereochemistry – I", "subtopics": [] },
-  { "name": "Thermodynamics – I", "subtopics": [] },
-  { "name": "Chemical Kinetics – I", "subtopics": [] },
-  { "name": "Introduction to Quantitative Analysis and Its Interdisciplinary Nature", "subtopics": [] },
-  { "name": "Titrimetric Analysis", "subtopics": [] },
-  { "name": "Acid–Base Titrimetry", "subtopics": [] },
-  { "name": "Redox Titrimetry", "subtopics": [] },
-  { "name": "Precipitation Titrimetry", "subtopics": [] },
-  { "name": "Complexometric Titrimetry", "subtopics": [] },
-  { "name": "Gravimetric Analysis", "subtopics": [] },
-  { "name": "Water Analysis", "subtopics": [] },
-  { "name": "Water Treatment Technologies", "subtopics": [] },
-  { "name": "Basic Laboratory Practices", "subtopics": [] }
+    {
+        "name": "Extra-Nuclear Structure of Atom",
+        "subtopics": [
+            {
+                "id": "vid1",
+                "name": "Wave–Particle Duality and de Broglie Hypothesis & Heisenberg’s Uncertainty Principle",
+                "url": "https://www.youtube.com/watch?v=uK2eFv7ne_Q"
+            },
+            {
+                "id": "vid2",
+                "name": "Introduction to Schrödinger Equation",
+                "url": "https://youtu.be/7q32Wnm4dEw?si=u42O1rA5tIzJhaOO"
+            },
+            {
+                "id": "vid3",
+                "name": "Significance of ψ and ψ² & Radial and Angular Distribution Functions",
+                "url": "https://youtu.be/G0aGlipKacI?si=XY2i-83ZL_2Dbgj3"
+            },
+            {
+                "id": "vid4",
+                "name": "Hydrogen and hydrogen like systems",
+                "url": "https://youtu.be/8kM9quINTHI?si=sB22kKd5osipO64v"
+            },
+            {
+                "id": "vid5",
+                "name": "Atomic Orbitals: Concept and Quantum Numbers (n, l, m, s)",
+                "url": "https://youtu.be/DvRzdCnsiYw?si=ob6GAk1Y_wHYL8y_"
+            },
+            {
+                "id": "vid6",
+                "name": "Shapes of s, p, and d Orbitals",
+                "url": "https://youtu.be/0_UyQAtXEL8?si=ukcy9p3S0ByqVdz2"
+            }
+        ]
+    },
+    {
+        "name": "Electronic Structure of Multielectronic Atoms",
+        "subtopics": [
+            {
+                "id": "vid7",
+                "name": "Orbital-filling & rules",
+                "url": "https://youtu.be/qVOkLkiEOVE?si=JVE6_B2_UVDACAJD"
+            },
+            {
+                "id": "vid8",
+                "name": "Exchange Energy and Stability",
+                "url": "https://youtu.be/DknGNJErxLI?si=FORG2-hEYQga6a6C"
+            },
+            {
+                "id": "vid9",
+                "name": "Exceptional Configurations (Cr, Cu, etc.)",
+                "url": "https://youtu.be/sRCG8YAJytw?si=22kkgc0bLbR9ypBE"
+            }
+        ]
+    },
+    {
+        "name": "Effective Nuclear Charge and Shielding",
+        "subtopics": []
+    },
+    {
+        "name": "Periodicity and Periodic Properties",
+        "subtopics": []
+    },
+    {
+        "name": "Basics of Organic Chemistry: Bonding and Physical Properties",
+        "subtopics": []
+    },
+    {
+        "name": "Molecular Orbital Theory and Aromaticity",
+        "subtopics": []
+    },
+    {
+        "name": "Physical Properties of Organic Compounds",
+        "subtopics": []
+    },
+    {
+        "name": "Stereochemistry – I",
+        "subtopics": []
+    },
+    {
+        "name": "Thermodynamics – I",
+        "subtopics": []
+    },
+    {
+        "name": "Chemical Kinetics – I",
+        "subtopics": []
+    },
+    {
+        "name": "Introduction to Quantitative Analysis and Its Interdisciplinary Nature",
+        "subtopics": []
+    },
+    {
+        "name": "Titrimetric Analysis",
+        "subtopics": []
+    },
+    {
+        "name": "Acid–Base Titrimetry",
+        "subtopics": []
+    },
+    {
+        "name": "Redox Titrimetry",
+        "subtopics": []
+    },
+    {
+        "name": "Precipitation Titrimetry",
+        "subtopics": []
+    },
+    {
+        "name": "Complexometric Titrimetry",
+        "subtopics": []
+    },
+    {
+        "name": "Gravimetric Analysis",
+        "subtopics": []
+    },
+    {
+        "name": "Water Analysis",
+        "subtopics": []
+    },
+    {
+        "name": "Water Treatment Technologies",
+        "subtopics": []
+    },
+    {
+        "name": "Basic Laboratory Practices",
+        "subtopics": []
+    }
 ]
