@@ -56,7 +56,12 @@
     },
     {
         "name": "Effective Nuclear Charge and Shielding",
-        "subtopics": []
+        "subtopics": [
+  {"id": "vid10", "name": "Concept of Effective Nuclear Charge (Zeff)", "url": "https://www.youtube.com/watch?v=NbUV5Qutlrk"},
+  {"id": "vid11", "name": "Shielding and Penetration Effects", "url": "https://www.youtube.com/watch?v=VWza-PlQTaU"},
+  {"id": "vid12", "name": "Slater’s Rules and Their Applications", "url": "https://youtu.be/TaYUOiEe6OA?si=k7kOdXRQA178xrIS"}
+]
+
     },
     {
         "name": "Periodicity and Periodic Properties",
