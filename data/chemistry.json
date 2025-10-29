@@ -8,7 +8,12 @@
   {"id": "vid5", "name": "Atomic Orbitals: Concept and Quantum Numbers (n, l, m, s)", "url": "https://youtu.be/DvRzdCnsiYw?si=ob6GAk1Y_wHYL8y_"},
   {"id": "vid6", "name": "Shapes of s, p, and d Orbitals", "url": "https://youtu.be/0_UyQAtXEL8?si=ukcy9p3S0ByqVdz2"}
   ] },
-  { "name": "Effective Nuclear Charge and Shielding", "subtopics": [] },
+  { "name": "Effective Nuclear Charge and Shielding", "subtopics": [
+  {"id": "vid7", "name": "Orbital-filling & rules", "url": "https://youtu.be/qVOkLkiEOVE?si=JVE6_B2_UVDACAJD"},
+  {"id": "vid8", "name": "Exchange Energy and Stability", "url": "https://youtu.be/DknGNJErxLI?si=FORG2-hEYQga6a6C"},
+  {"id": "vid9", "name": "Exceptional Configurations (Cr, Cu, etc.)", "url": "https://youtu.be/sRCG8YAJytw?si=22kkgc0bLbR9ypBE"}
+]
+},
   { "name": "Periodicity and Periodic Properties", "subtopics": [] },
   { "name": "Basics of Organic Chemistry: Bonding and Physical Properties", "subtopics": [] },
   { "name": "Molecular Orbital Theory and Aromaticity", "subtopics": [] },
