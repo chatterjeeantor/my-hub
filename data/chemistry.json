@@ -59,29 +59,65 @@
         "subtopics": [
   {"id": "vid10", "name": "Concept of Effective Nuclear Charge (Zeff)", "url": "https://www.youtube.com/watch?v=NbUV5Qutlrk"},
   {"id": "vid11", "name": "Shielding and Penetration Effects", "url": "https://www.youtube.com/watch?v=VWza-PlQTaU"},
-  {"id": "vid12", "name": "Slater’s Rules and Their Applications", "url": "https://youtu.be/TaYUOiEe6OA?si=k7kOdXRQA178xrIS"}
+  {"id": "vid12", "name": "Slater’s Rules and Their Applications", "url": "https://youtu.be/1e91yNiCF98"}
 ]
 
     },
     {
         "name": "Periodicity and Periodic Properties",
-        "subtopics": []
+        "subtopics": [
+  {"id": "vid13", "name": "Modern Periodic Table and periodic trends", "url": "https://ocw.mit.edu/courses/5-111sc-principles-of-chemical-science-fall-2014/pages/unit-ii-chemical-bonding-structure/lecture-8/"},
+  {"id": "vid14", "name": "Electronegativity Scales (Pauling, Mulliken, Allred–Rochow)", "url": "https://www.youtube.com/watch?v=YBi6Hb2rlm8"},
+  {"id": "vid15", "name": "Inert Pair Effect", "url": "https://youtu.be/a6bJ15JIfcM"}
+]
     },
     {
         "name": "Basics of Organic Chemistry: Bonding and Physical Properties",
-        "subtopics": []
+        "subtopics": [
+  {"id": "vid16", "name": "Nomenclature of Organic Compounds", "url": "https://youtu.be/GYq9cQ3H4FU"},
+  {"id": "vid17", "name": "Valence Bond Theory and Concept of Hybridisation", "url": "https://ocw.mit.edu/courses/5-111sc-principles-of-chemical-science-fall-2014/pages/unit-ii-chemical-bonding-structure/lecture-14/"},
+  {"id": "vid18", "name": "Shapes and Structures of Organic Molecules", "url": "https://ocw.mit.edu/courses/5-111sc-principles-of-chemical-science-fall-2014/pages/unit-ii-chemical-bonding-structure/lecture-12/"},
+  {"id": "vid19", "name": "Double Bond Equivalent (DBE) and Its Significance", "url": "https://youtu.be/E52zvPEnvvw"},
+  {"id": "vid20", "name": "Resonance, and Resonance Energy", "url": "https://youtu.be/subof-xErwQ"},
+  {"id": "vid21", "name": "Hyperconjugation", "url": "https://youtu.be/iJ7PI3Pi5js"},
+  {"id": "vid22", "name": "Inductive Effect", "url": "https://youtu.be/Ij4w63-wiWQ"},
+  {"id": "vid23", "name": "Bond Polarization and Polarizability", "url": "https://youtu.be/ZE83daa6Fds"},
+  {"id": "vid24", "name": "Steric Effect", "url": "https://youtu.be/u_S-Fz-zEyU"},
+  {"id": "vid25", "name": "Steric Inhibition of Resonance", "url": "https://youtu.be/RGxzRfuEesI"}
+]
     },
     {
         "name": "Molecular Orbital Theory and Aromaticity",
-        "subtopics": []
+        "subtopics": [
+  {"id": "vid26", "name": "Qualitative Idea of Molecular Orbitals & Bonding and Antibonding Interactions", "url": "https://www.youtube.com/watch?v=zHFraOOdO0Y"},
+  {"id": "vid27", "name": "Concept of HOMO, LUMO, and SOMO", "url": "https://youtu.be/r2lx4cIEAk4"},
+  {"id": "vid28", "name": "π-Molecular Orbitals of Acyclic Systems", "url": "https://youtu.be/cEOgSn5pvhw"},
+  {"id": "vid29", "name": "π-Molecular Orbitals of Cyclic Systems", "url": ""},
+  {"id": "vid30", "name": "Hückel’s Rule for Aromaticity", "url": "https://youtu.be/rtW4pQDIEXw"}
+]
+
     },
     {
         "name": "Physical Properties of Organic Compounds",
-        "subtopics": []
+        "subtopics": [
+  {"id": "vid31", "name": "Melting and Boiling Points in Terms of Intermolecular Forces", "url": "https://youtu.be/08kGgrqaZXA"},
+  {"id": "vid32", "name": "Covalent and Non-Covalent Interactions", "url": "https://youtu.be/ixs27YUKgRw"},
+  {"id": "vid33", "name": "Solubility and Molecular Polarity", "url": "https://youtu.be/X_tMan5mJEw"},
+  {"id": "vid34", "name": "Dipole Moment and Its Relation to Molecular Structure", "url": "https://youtu.be/y5OvK441e8s"}
+]
+
     },
     {
         "name": "Stereochemistry – I",
-        "subtopics": []
+        "subtopics": [
+  {"id": "vid35", "name": "Tetrahedral Nature of Carbon and Molecular Asymmetry", "url": "https://youtu.be/bj13zmUE7y0"},
+  {"id": "vid36", "name": "Molecular Representations: Fischer, Sawhorse, Flying Wedge, Newman Projections formulae", "url": "https://youtu.be/4piZRu862XE"},
+  {"id": "vid37", "name": "Inter translations of representations", "url": "https://youtu.be/-7yYlVt32OE"},
+  {"id": "vid38", "name": "Chirality and Symmetry Elements", "url": "https://youtu.be/hH2Zfucp0oo"},
+  {"id": "vid39", "name": "Chiral Centers, Asymmetric and Dissymmetric Molecules", "url": "https://youtu.be/rgBmFXeH1Ro"},
+  {"id": "vid40", "name": "Enantiomers, Diastereomers", "url": "https://youtu.be/IwIB3QYga1Y"},
+  {"id": "vid41", "name": "Number of Stereoisomers in Systems with One or Two Chiral Centers", "url": "https://youtu.be/bhSyHNOQ_Fk"}
+]
     },
     {
         "name": "Thermodynamics – I",
